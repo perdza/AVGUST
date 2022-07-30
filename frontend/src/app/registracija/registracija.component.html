@@ -1,0 +1,97 @@
+<h2>Registracija korisnika</h2>
+
+
+<form style="display: inline-block;" id="formaZaRegistraciju" #mojaforma='ngForm' (ngSubmit)="mojaforma.form.valid && registracija()">
+<table>
+    <tr>
+        <td>Korisnicko:</td>
+        <td>
+            <input type="text" name="kor" [(ngModel)] = "korisnicko" #kor='ngModel'  required>
+        </td>
+        <td *ngIf='mojaforma.submitted && kor.invalid'>
+            <span style="color: red;">Molim vas unesite korisnicko!</span>
+        </td>
+    </tr>
+    <tr>
+        <td>Lozinka:</td>
+        <td>
+            <input type="text" name="sifra" [(ngModel)] = "lozinka" #sifra='ngModel'
+             pattern="^(([a-z]{1}(?=.*[A-Z])(?=.*\d)(?=.*\W)[a-zA-Z\d\W]{7,11})|([A-Z]{1}(?=.*\d)(?=.*\W)[a-zA-Z\d\W]{7,11}))$" required>
+        </td>
+        <td *ngIf='mojaforma.submitted && sifra.invalid'>
+            <span *ngIf='sifra.errors.pattern' style="color: red;">Greska u paternu!</span>
+            <span *ngIf='!sifra.errors.pattern' style="color: red;">Molim vas unesite lozinku!</span>
+        </td>
+    </tr>
+    <!--
+    <tr>
+        <td>Potvrda Lozinke:</td>
+        <td>
+            <input type="text" name="sifra" [(ngModel)] = "lozinka" #sifra='ngModel'
+             pattern="^(?:([a-z]{1}(?=.*[A-Z])(?=.*\d)(?=.*\W)[a-zA-Z\d\W]{7,11})|([A-Z]{1}(?=.*\d)(?=.*\W)[a-zA-Z\d\W]{7,11}))$" required>
+        </td>
+        <td *ngIf='mojaforma.submitted && sifra.invalid'>
+            <span *ngIf='sifra.errors.pattern' style="color: red;">Greska u paternu!</span>
+            <span *ngIf='!sifra.errors.pattern' style="color: red;">Molim vas unesite lozinku!</span>
+        </td>
+    </tr>
+    -->
+    <tr>
+        <td>Ime:</td>
+        <td>
+            <input type="text" name="imeKorisnika" [(ngModel)] = "ime" #imeKorisnika= 'ngModel' required>
+        </td>
+        <td *ngIf='mojaforma.submitted && imeKorisnika.invalid'>
+            <span style="color: red;">Molim vas unesite ime!</span>
+        </td>
+    </tr>
+    <tr>
+        <td>Prezime:</td>
+        <td>
+            <input type="text" name="prez" [(ngModel)] = "prezime" #prez= 'ngModel' required>
+        </td>
+        <td *ngIf='mojaforma.submitted && prez.invalid'>
+            <span style="color: red;">Molim vas unesite prezime!</span>
+        </td>
+    </tr>
+    <tr>
+        <td>Adresa:</td>
+        <td>
+            <input type="text" name="adr" [(ngModel)] = "adresa" #adr='ngModel' required>
+        </td>
+        <td *ngIf='mojaforma.submitted && adr.invalid'>
+            <span style="color: red;">Molim vas unesite adresu!</span>
+        </td>
+    </tr>
+    <tr>
+        <td>Telefon:</td>
+        <td>
+            <input type="text" name="brojtelefona" [(ngModel)] = "telefon" #brojtelefona='ngModel' pattern="[0]{1}[6]{1}[\d]{7,8}" required>
+        </td>
+        <td *ngIf='mojaforma.submitted && brojtelefona.invalid'>
+            <span *ngIf='brojtelefona.errors.pattern' style="color: red;">Greska u paternu!</span>
+            <span *ngIf='!brojtelefona.errors.pattern' style="color: red;">Molim vas unesite broj telefona!</span>
+        </td>
+    </tr>
+    <tr>
+        <td>E-mail:</td>
+        <td>
+            <input type="text" name="mejl" [(ngModel)] = "email" #mejl = 'ngModel' required>
+        </td>
+        <td *ngIf='mojaforma.submitted && mejl.invalid'>
+            <span style="color: red;">Molim vas unesite mejl!</span>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input type="submit" value="Registruj">
+        </td>
+        <!--<td align="center">
+            <input type="button" onclick="resetujFormu()" value="Resetuj Formu">
+        </td>
+    -->
+    </tr>
+</table>
+</form>
+<br/>
+{{poruka}}
