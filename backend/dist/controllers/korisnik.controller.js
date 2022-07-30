@@ -13,8 +13,8 @@ class KorisnikController {
             korisnik_1.default.findOne({ 'korisnicko': korisnicko, 'lozinka': lozinka }, (err, korisnik) => {
                 if (err)
                     console.log(err);
-                else if (korisnik.admin)
-                    res.json(null);
+                //else if(korisnik.admin)
+                //res.json(null)
                 else
                     res.json(korisnik);
             });

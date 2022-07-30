@@ -31,7 +31,6 @@ export class RegistracijaComponent implements OnInit {
               this.poruka = 'Korisnik registrovan!'
             else
               this.poruka = 'Greska!'
-            //setTimeout(location.reload.bind(location),5000);
       })
   }
 }
