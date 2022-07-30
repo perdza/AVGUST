@@ -1,7 +1,6 @@
 <h2>Registracija korisnika</h2>
 
-
-<form style="display: inline-block;" id="formaZaRegistraciju" #mojaforma='ngForm' (ngSubmit)="mojaforma.form.valid && registracija()">
+<form style="display: inline-block;" id="formaZaRegistraciju" #mojaforma='ngForm' (ngSubmit)="(mojaforma.form.valid && registracija()); (mojaforma.form.valid && mojaforma.form.reset());">
 <table>
     <tr>
         <td>Korisnicko:</td>
@@ -86,12 +85,13 @@
         <td>
             <input type="submit" value="Registruj">
         </td>
-        <!--<td align="center">
-            <input type="button" onclick="resetujFormu()" value="Resetuj Formu">
+        <!--<td >
+            <input type="button" onclick="resetujFormu()" value="Reset form">
         </td>
     -->
     </tr>
 </table>
 </form>
 <br/>
+
 {{poruka}}
