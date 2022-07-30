@@ -21,8 +21,14 @@ let korisnikSchema = new Schema({
     adresa: {
         type: String
     },
+    telefon: {
+        type: String
+    },
     email: {
-        type: Number
+        type: String
+    },
+    admin: {
+        type: Boolean
     }
 });
 exports.default = mongoose_1.default.model('korisnikModel', korisnikSchema, 'korisnici');

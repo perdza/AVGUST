@@ -2,6 +2,7 @@ import express from 'express';
 import cors from 'cors'
 import mongoose from 'mongoose'
 import korisnikRouter from './routers/korisnik.routes';
+import adminRouter from './routers/admin.routes';
 
 const app = express();
 app.use(cors())
@@ -16,6 +17,7 @@ connection.once('open', ()=>{
 const ruter = express.Router();
 
 ruter.use('/korisnici', korisnikRouter)
+ruter.use('/admin', adminRouter)
 
 app.use('/', ruter)
 

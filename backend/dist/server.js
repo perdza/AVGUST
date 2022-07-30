@@ -7,6 +7,7 @@ const express_1 = __importDefault(require("express"));
 const cors_1 = __importDefault(require("cors"));
 const mongoose_1 = __importDefault(require("mongoose"));
 const korisnik_routes_1 = __importDefault(require("./routers/korisnik.routes"));
+const admin_routes_1 = __importDefault(require("./routers/admin.routes"));
 const app = (0, express_1.default)();
 app.use((0, cors_1.default)());
 app.use(express_1.default.json());
@@ -17,6 +18,7 @@ connection.once('open', () => {
 });
 const ruter = express_1.default.Router();
 ruter.use('/korisnici', korisnik_routes_1.default);
+ruter.use('/admin', admin_routes_1.default);
 app.use('/', ruter);
 app.listen(4000, () => console.log(`Express server running on port 4000`));
 //# sourceMappingURL=server.js.map

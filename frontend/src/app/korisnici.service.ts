@@ -18,4 +18,17 @@ export class KorisniciService {
     }
     return this.http.post(`${this.uri}/korisnici/login`, data);
   }
+
+  registracija(korisnickoForma, lozinkaForma, imeForma, prezimeForma, adresaForma, telefonForma, emailForma){
+    const data = {
+      korisnicko: korisnickoForma,
+      lozinka: lozinkaForma,
+      ime: imeForma,
+      prezime: prezimeForma,
+      adresa: adresaForma, 
+      telefon: telefonForma,
+      email: emailForma
+    }
+    return this.http.post(`${this.uri}/korisnici/registracija`, data);
+  }
 }

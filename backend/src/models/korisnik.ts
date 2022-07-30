@@ -18,8 +18,14 @@ let korisnikSchema = new Schema({
     adresa: {
         type: String
     },
+    telefon: {
+        type: String
+    },
     email: {
-        type: Number
+        type: String
+    },
+    admin: {
+        type: Boolean
     }
 })
 
